@@ -1,0 +1,30 @@
+@startuml
+skinparam componentStyle rectangle
+
+node "User Device" as UserDevice {
+    [Web Browser]
+}
+
+node "Ubuntu Server" as UbuntuServer {
+    node "Frontend Server" as FrontendServer {
+        [React Application]
+    }
+    node "Backend Server" as BackendServer {
+        [Flask API]
+        [Weather Logic]
+    }
+    database "Database Server" as Database {
+        [Weather Data Cache]
+    }
+}
+
+node "OpenWeather API" as ExternalAPI {
+    [Weather Data Provider]
+}
+
+' Relationships
+UserDevice --> FrontendServer : Sends HTTP requests
+FrontendServer --> BackendServer : API calls (REST)
+BackendServer --> ExternalAPI : Fetches weather and forecast data
+BackendServer --> Database : Reads/Writes cached data
+@enduml

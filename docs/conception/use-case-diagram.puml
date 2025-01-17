@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor User as U
+
+package "Weather App" {
+    usecase "Enter City Name" as UC1
+    usecase "Fetch Current Weather" as UC2
+    usecase "Display Current Weather Details" as UC3
+    usecase "Fetch Weather Forecast" as UC4
+    usecase "Display Weather Forecast" as UC5
+    usecase "Toggle Dark Mode" as UC6
+}
+
+U -> UC1 : Inputs city
+UC1 -> UC2 : Triggers API call for weather
+UC1 -> UC4 : Triggers API call for forecast
+UC2 -> UC3 : Returns weather data
+UC4 -> UC5 : Returns forecast data
+U -> UC3 : Views weather details
+U -> UC5 : Views forecast details
+U -> UC6 : Activates dark mode
+@enduml
