@@ -62,7 +62,7 @@
 
 ### Technical Specifications
 
-![Package Diagram](conception/diagram-package.png)
+![Package Diagram](conception/package.png)
 
 #### Backend
 
@@ -83,7 +83,7 @@
 
 ### Deployment
 
-![Deployment Diagram](conception/diagrame-deployment.png)
+![Deployment Diagram](conception/deploiment.png)
 
 Linux Ubunto Server with:
 
