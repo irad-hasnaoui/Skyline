@@ -3,14 +3,23 @@ import axios from 'axios';
 import moment from 'moment';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import './App.css';
+import DarkMode from "./components/DarkMode/DarkMode";
 
+  DarkMode();
+
+  
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState([]);
   const [city, setCity] = useState("Paris");
   const [darkMode, setDarkMode] = useState(false);
+  
+
 
   // Fetch current weather and forecast data
+  
+
+
   useEffect(() => {
     const getWeather = async () => {
       try {
@@ -128,3 +137,4 @@ const WindVisualization = () => {
 };
 
 export default App;
+
