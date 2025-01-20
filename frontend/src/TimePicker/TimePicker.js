@@ -11,7 +11,8 @@ function TimePicker () {
     <div>
         <p>{time.toLocaleTimeString()}</p>
     </div>
-  )
+
+)
   
 }
 
